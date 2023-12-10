@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PersonsComponent :title=houseName :persons=persons />
+        <PersonsComponent :filterFunction="filterPerson"  :persons="filteredArray || persons" :title="houseName" />
     </div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
     return {
       persons: [],
       houseName: '',
+      filteredArray: null,
     };
   },
   async created() {
@@ -43,9 +44,17 @@ export default {
         };
         fetchPersons();
   },
+  methods: {
+        filterPerson(query) {
+            const filter = this.persons.filter((person) => {
+                return person.name.toLowerCase().includes(query.toLowerCase());
+            });
+      this.filteredArray = filter;
+        },
+    },
 }
 </script>
 
 <style scoped>
-/* Your component's CSS styles go here */
+
 </style>
