@@ -63,4 +63,9 @@ p {
   opacity: .5;
   font-size: .8rem;
 }
+@media screen and (max-width: 500px) {
+  .quote-card {
+    width: 100%;
+  }
+}
 </style>

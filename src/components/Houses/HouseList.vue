@@ -2,7 +2,7 @@
   <section class="house">
     <div class="container">
       <h3>Nobel Houses</h3>
-      <div class="House-list">
+      <div class="house-list">
         <HouseCard v-for="(item, index) in houses" :key="index" :item="item" />
       </div>
     </div>
@@ -43,7 +43,7 @@ section {
 h3 {
   text-align: start;
 }
-.House-list {
+.house-list {
   display: flex;
   justify-content: start;
   gap: 30px;
@@ -59,4 +59,12 @@ h3 {
   width: 100%;
   gap: 60px;
 }
+@media screen and (max-width: 500px) {
+  h3 {
+    text-align: center;
+  }
+.house-list{
+  justify-content: center;
+}
+  }
 </style>

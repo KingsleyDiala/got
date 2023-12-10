@@ -122,4 +122,10 @@ input::placeholder {
   color: #fff;
   opacity: .5;
 }
+@media screen and (max-width: 500px) {
+  .input {
+    width: 90%;
+    min-width: none;
+  }
+}
 </style>
