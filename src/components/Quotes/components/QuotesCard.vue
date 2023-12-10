@@ -46,6 +46,7 @@ export default {
   justify-content: center;
   align-items: start;
   flex-direction: column;
+  min-width: 400px;
 }
 h4 {
   font-size: 1.5rem;
