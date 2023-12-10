@@ -1,5 +1,9 @@
 <template>
   <div class="person-card">
+    <!-- render a div if person.house exist -->
+    <div class="person-house" v-if="person.house">
+      <p>{{ person.house }}</p>
+    </div>
     <router-link :to="{name: 'person-quotes', params: { persons: param || 'house', slug: person.slug} }">
       <div class="img-container">
         <img src="../../../../public/img/user-icon.png" alt="User">
@@ -32,6 +36,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .img-container {
   width: 193px;
@@ -50,5 +55,18 @@ img {
 }
 p {
   cursor: pointer;
+}
+.person-house {
+  padding: 10px 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+.person-house p {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+  margin: 0;
 }
 </style>

@@ -25,6 +25,11 @@ export default {
             );
             const data = await response.json();
             data.forEach(element => {
+                // add the house name to each member of the house object
+                element.members.forEach(member => {
+                    // add the house name to each member of the house object
+                    member.house = element.name;
+                });
                 this.allPerson.push(...element.members);
             });
             return data;
